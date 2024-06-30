@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <style>    
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Inter:wght@700&family=roboto:wght@500&display=swap');
+  body {
+    font-family: "roboto", roboto;
+    margin: 0;
+    padding: 0;
+    background-color:whitesmoke;
+}
+.bg {
+    font-family: "Inter", roboto;
+    background-image: linear-gradient(to bottom,#fff ,#FFBDF6 ); /* Gradient background */
+    color:#8E4574; /* Text color */
+}
+.profile {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            height: 60px;
+            
+        }
+        .header-img{
+            border-radius: 10px;
+            border: 3px solid #FF69B4;
+            position: relative;
+            padding: 2px;
+            margin-top: 20px;
+            width: 60px;
+            height: 60px;
+
+
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-top: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            animation: colorChange 5s infinite alternate; /* Change color every 5 seconds */
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #FFBDF6; /* Dodger Blue */
+            }
+            25% {
+                color: #64305D; /* Tomato */
+            }
+            50% {
+                color: #FFDEFB; /* Lime Green */
+            }
+            75% {
+                color: #8E4574; /* Gold */
+            }
+            100% {
+                color: #64305D; /* Blue Violet */
+            }
+        }
+        
+
+.container-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 70%;
+    margin:30px;
+    padding: 20px;
+    letter-spacing: 1px;
+    background-color:white ;
+    /* box-shadow: 0 0 10px 2px #FFBDF6; */
+    box-sizing: border-box;
+    border: 2px solid #8E4574;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+/*  */
+.head-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content h4{
+    font-size: 25px;
+}
+.sno{
+    padding: 10px;
+    margin: 2px;
+    font-size: 50px;
+    color: #8E4574;
+}
+/* read more btn */
+.read-more-btn:hover {
+    background-color: #FFDEFB;
+    color:black;
+    box-shadow: 0px 0.2em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 50px -1rem 40px #FFBDF6;
+}
+.read-more-btn {
+    display: inline-block;
+    max-height: fit-content;
+    width: 180px;
+    font-size: 20px;
+    font-weight: 300 ;
+    border: 1px solid #fff;
+    cursor: pointer;
+    background-color: #8E4574;
+    padding: 2px;
+    border-radius: 100px;
+    color: white;
+    height: 40px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+/*submit button */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  top: 20px;
+  left: 20px;
+}
+
+.buttons button {
+  width: 150px;
+  height: 50px;
+  background-color: #FFDEFB;
+  margin: 20px;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.buttons button:before, .buttons button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #8E4574;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.buttons button span:before, .buttons button span:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 0;
+  background-color: #8E4574;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:before {
+  right: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:after {
+  left: 0;
+  bottom: 0;
+}
+
+.buttons button p {
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons button p:before, .buttons button p:after {
+  position: absolute;
+  width: 100%;
+  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+  z-index: 1;
+  left: 0;
+}
+
+.buttons button p:before {
+  content: attr(data-title);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button p:after {
+  content: attr(data-text);
+  top: 150%;
+  color: black;
+  font-weight: 600;
+}
+
+.buttons button:hover:before, .buttons button:hover:after {
+  width: 100%;
+}
+
+.buttons button:hover span {
+  z-index: 1;
+}
+
+.buttons button:hover span:before, .buttons button:hover span:after {
+  height: 100%;
+}
+
+.buttons button:hover p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button:hover p:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons button.start {
+  background-color: #8E4574;
+  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.buttons button.start p:before {
+  top: -50%;
+  transform: rotate(5deg);
+}
+
+.buttons button.start p:after {
+  color: white;
+  transition: all 0s ease;
+  content: attr(data-start);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: start 0.3s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes start {
+  from {
+    top: -50%;
+  }
+}
+
+.buttons button.start:hover:before, .buttons button.start:hover:after {
+  display: none;
+}
+
+.buttons button.start:hover span {
+  display: none;
+}
+
+.buttons button:active {
+  outline: none;
+  border: none;
+}
+
+.buttons button:focus {
+  outline: 0;
+}
+/* heading*/
+header {
+  width: 98%;
+  height: 10vh;
+  padding: 20px 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+header h2 {
+  position: relative;
+  font-size: 65px;
+  font-weight: 600;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: "roboto",roboto;
+  letter-spacing: 1.5rem;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;   
+}
+header .header-1{
+  background-image: repeating-radial-gradient(closest-side at 5px 5px,#8E4574, #64305D, #8E4574);
+}
+    </style>
+    <!-- Add this script section after your existing script -->
+<script>
+  particlesJS("confetti-container", {
+      particles: {
+          number: { value: 100 },
+          color: { value: "#FF69B4" },
+          shape: { type: "circle" },
+          opacity: { value: 0.8, random: true, anim: { enable: true, speed: 1, opacity_min: 0 } },
+          size: { value: 5, random: true },
+          line_linked: { enable: false },
+          move: { enable: true, speed: 5, direction: "bottom", random: true, straight: false, out_mode: "out" },
+      },
+  });
+
+  function toggleVisibility(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === "none") {
+          element.style.display = "block";
+      } else {
+          element.style.display = "none";
+      }
+  }
+</script>
+
+</head>
+<body> 
+  <h1>UNCALLED INNOVATORS</h1>
+  
+  <img class="header-img" src="C:\Users\PARVATHI\Downloads\photo.jpg" alt="Header Image" width="60" height="60">
+      <a href="#" title="user icons" class="profile">
+        <img src="C:\Users\PARVATHI\OneDrive\Desktop\ui new\profile.png" alt="profile" width="50" height="50">
+    </a><hr>
+    <header>
+        <h2 class="header-1">Problem Statements</h2>
+      </header>
+<div class="container-box">
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">01</h1>
+        <div class="content">
+            <p>In radial drilling machine, it is hard to find the depth of the hole while drilling. So find an attachment which can be attached to the existing radial drilling machine, which makes it semi-automate to drill the desired depth</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container1More')">Read More</button> 
+    <div id="container1More" style="display: none;">
+        <img src="C:\Users\PARVATHI\Downloads\1.jpg" alt="Image Description" width="300" height="300">
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">02</h1>
+        <div class="content">
+            <h4>ChildSafety</h4>
+            <p>Creating a system to monitor a child's attendance at school and ensure their safety when playing in a specified area involves a combination of attendance tracking and location-based monitoring. Here's how you could structure a solution:</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container6More')">Read More</button>
+    
+    <div id="container6More" style="display: none;">
+        
+        <p>Parents want to ensure that their child is attending school regularly and is safe when playing in a designated area. Develop a website or app that monitors the child's school attendance and alerts parents if the child crosses a predefined boundary, ensuring their safety.</p>
+        <ol type="I">
+            <li>Crossing Boundary Alert:</li>
+            <p>Define a specific distance (e.g., 100 meters) as a boundary for the child's play area.
+        When the child crosses this boundary, trigger an alert.</p>
+        <li>Parental Alerts:</li>
+        <p>Send immediate alerts to parents through the app or via SMS notifying them of the child's absence from school or crossing the play area boundary.</p>
+        <li> Mobile App/Web Dashboard:</li>
+        <p>
+        Develop a user-friendly mobile app for parents to receive alerts and track their child's attendance and location.
+        Create a web dashboard for more detailed reporting and settings.</p>
+        <li>Emergency Contact Integration:</li>
+
+        <p>Include emergency contact information within the app, allowing parents to quickly respond to alerts.</p>
+       </ol> 
+        <ul>
+            <li>Considerations:</li>
+            <p>Ensure the solution complies with privacy laws and regulations.</p>
+            <p>Implement robust security measures to protect sensitive data.</p>
+            <p>Provide clear communication to parents about the purpose and functionality of the system.</p>
+        </ul>
+        
+    </div>      
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">03</h1>
+        <div class="content">
+            <h4>Vehical and smart home management </h4>
+            <p>create a seamless and intuitive experience where users can remotely manage smart home devices by simply engaging in a conversation with their vehicle's voice assistant.</p>
+        </div>
+    </div>
+    
+    <button class="read-more-btn" onclick="toggleVisibility('container8More')">Read More</button>
+    
+    <div id="container8More" style="display: none;">
+        <h4>Key Features:</h4>
+        <ol type="I">
+        <li>Cross-Domain Voice Command Integration:</li>
+        <p>Develop a system that allows users to issue voice commands to their car's assistant for tasks beyond vehicular control, such as managing smart home devices.</p>
+        <li>Home Automation Connectivity:</li>
+        <p>Establish robust connectivity between the car's voice assistant and the user's smart home devices, enabling a wide range of home automation commands.</p>
+        <li>Natural Language Understanding:</li>
+        <p>Implement advanced natural language processing algorithms to ensure the voice assistant comprehensively understands user commands related to home control.</p>
+        <li>Secure Authentication:</li>
+        <p>Integrate secure authentication measures to verify the user's identity and prevent unauthorized access to home devices through voice commands.</p>
+        <li>Device-Specific Commands:</li>
+        <p>Enable users to issue specific commands for individual devices, such as adjusting thermostats, turning lights on/off, or controlling entertainment systems.</p>
+        <li>VRemote Monitoring:</li>
+        <p>Provide users with the ability to inquire about the status of home devices through voice queries while driving, ensuring peace of mind and efficient management.</p>
+        <li>Integration with Smart Home Platforms:</li>
+        <p>Ensure compatibility with popular smart home platforms (e.g., Google Home, Amazon Alexa) to broaden the range of supported devices.</p>
+        <li>Contextual Understanding:</li>
+        <p>Develop the system's ability to understand contextual information, allowing for more natural and nuanced interactions.</p>
+     </ol>
+     <h4>Considerations:</h4>
+     <ol type="I">
+        <li>Privacy Protection: Implement robust privacy measures to protect user data and ensure secure communication between the car and smart home devices.</li>
+        <li>Device Compatibility: Ensure compatibility with a wide range of smart home devices to accommodate diverse user preferences.   </li>
+        <li>User-Friendly Experience: Design a user interface that provides clear feedback on the execution of voice commands and offers an intuitive experience.</p>
+        </li>
+    </ol>
+    </div>
+</div>
+<!--  -->    
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">04</h1>
+        <div class="content">
+            <p>The machine service life is decreased due to lack of support at one end. So provide a bearing at one end and it should  </p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container2More')">Read More</button>
+    
+        <div id="container2More" style="display: none;">
+            <!--   -->
+            <!-- Add your content here -->
+            <ul>
+                <li>It should be reusable.</li>
+                <li>Easy to take bottles from packing.</li>
+                <li>The packing material should not violate government norms.</li>
+                <li>If a heavy commercial vehicle is used to transport bottles to filling station, at least packing material should be transported back to the production plant.</li>
+            </ul>
+        </div>
+    
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">05</h1>
+        <div class="content">
+            <h4>Personal Protection</h4>
+            <P>In various occupational settings such as construction sites or electric fields, ensuring the safety and compliance of workers with essential personal protection equipment (PPE) poses a critical challenge. The need is to develop a system that can effectively detect and monitor the usage of specific safety gear, such as hard hats, to enhance workplace safety protocols.</P>
+        </div>
+    </div>
+
+    <button class="read-more-btn" onclick="toggleVisibility('container12More')">Read More</button>
+    
+    <div id="container12More" style="display: none;">
+    <h4><b>Key Objectives:</b></h4>
+    <ol type="I">
+        <li>PPE Compliance Monitoring:</li>
+        <p>Develop a solution that utilizes advanced sensing technologies to monitor whether workers are wearing essential safety gear, such as hard hats, within designated work zones.</p>
+        <li>Real-time Detection:</li>
+        <p>Implement real-time detection mechanisms that instantly identify instances where workers may not be adhering to PPE requirements, triggering immediate alerts for corrective action.</p>
+        <li>Customizable Parameters:</li>
+        <p>Allow site managers or safety officers to customize parameters based on the specific safety requirements of the workplace, ensuring flexibility in monitoring different types of personal protection equipment.</p>
+        <li>Integration with Access Control:</li>
+        <p>Explore integration with access control systems to ensure that individuals without the required safety gear are restricted from entering high-risk areas, promoting a proactive safety culture.</p>
+        <li>User-Friendly Interface:</li>
+        <p>Design a user-friendly interface for site managers and safety officers to easily monitor and track PPE compliance, enabling swift response to potential safety breaches.</p>
+    </ol>
+    <h4><b>Considerations:</b></h4>
+    <ul>
+        <li>Privacy Concerns:</li>
+        <p>Implement privacy measures to protect the personal data and identity of workers, ensuring compliance with privacy regulations and ethical standards.</p>
+        <li>Scalability:</li>
+        <p>Design the system to be scalable, accommodating varying workforce sizes and adapting to different work environments.</p>
+    </ul>
+</div>
+</div>
+<!--  -->
+<div class="container"> 
+    <div class="head-div" >
+        <h1 class="sno">06</h1>
+        <div class="content">
+            <p>In a traditional way of packing bottles, a cover is used to pack a stack of bottles to transport from the bottle production plant to the filling station. After reaching the filling station, the cover is cut off and it cannot be reused because of tearing. Wooden boxes are not used because returning the boxes increases transportation cost. So design a new way of packing that satisfies the following constraints:</p>
+        </div>
+    </div>       
+        <button class="read-more-btn" onclick="toggleVisibility('container60More')">Read More</button>
+        
+        <div id="container60More" style="display: none;">
+            <!--   -->
+            <!-- Add your content here -->
+            <ul>
+                <li>It should be reusable.</li>
+                <li>Easy to take bottles from packing.</li>
+                <li>The packing material should not violate government norms.</li>
+                <li>If a heavy commercial vehicle is used to transport bottles to filling station, at least packing material should be transported back to the production plant.</li>
+            </ul>
+        </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">07</h1>
+        <div class="content">
+            <h4>Smart Kitchen</h4>
+            <p>In the realm of modern smart kitchens, envision an intelligent system that simplifies the cooking experience by seamlessly integrating meal planning, ingredient availability checking, and automatic ingredient procurement. This innovative system aims to revolutionize the way we cook by leveraging smart technology to enhance efficiency and convenience.</p>
+        </div>
+    </div> 
+        <button class="read-more-btn" onclick="toggleVisibility('container7More')">Read More</button>
+        <div id="container7More" style="display: none;">
+            <h4><b>Key Features:</b></h4>
+            <ol type="I">
+                <li>Automated Meal Planning:</li>
+                <p>Users can select a desired dish from an extensive recipe database within the smart fridge system.</p>
+                <li>Automatic Ingredient Procurement:</li>
+                <p>If any essential ingredient is missing, the system seamlessly initiates an automatic ordering process from designated online grocery platforms or local stores.</p>
+                <li>Integration with Grocery Services:</li>
+                <p>The system is designed to interface with popular grocery services like Zepto, ensuring a swift and reliable procurement process.</p>
+                <li>Pre-emptive Ordering:</li>
+                <p>Orders are placed in advance, guaranteeing the arrival of ingredients before the cooking process begins, eliminating delays.</p>
+                <li>User Notification:</li>
+                <p>Users receive timely notifications confirming the successful order placement and expected delivery time.</p>
+                <li>Customizable Preferences:</li>
+                <p>Users have the flexibility to set preferences, such as preferred grocery stores, delivery times, and brand choices.</p>
+                <li>Optimized for Efficiency:</li>
+                <p>The system aims to streamline the entire cooking experience, saving users time and effort in meal preparation.</p>
+            </ol>
+            <h4><b>Considerations:</b></h4>
+            <ul>
+                <li>Security:</li>
+                <p>Implement robust security measures to safeguard user data and financial transactions.</p>
+                <li>Integration Compatibility:</li>
+                <p>Ensure seamless integration with various online grocery platforms to accommodate user preferences.</p>
+                <li>User-Friendly Interface:</li>
+                <p>Design an intuitive and user-friendly interface accessible via the smart fridge display or a companion app.</p>
+            </ul>
+        </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">08</h1>
+        <div class="content">
+            <p>The third piston ring (3piece oil ring) the rail is experiencing deformation due to thin axial width, as a result of the heat treatment procedure, leading to its rejection. The pivotal details regarding this particular ring are outlined below:</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container3More')">Read More</button>
+
+    <div id="container3More" style="display: none;">
+        <!--   -->
+        <!-- Add your content here -->
+        <ol>
+            <li>The third piston ring rail is undergoing a distortion phenomenon.</li>
+            <li>The heat treatment process is causing the third piston ring rail to bend.</li>
+            <li>Regrettably, this deformation renders the ring unsuitable for use.</li>
+            <li>The rejection of the third piston ring rail is a consequence of the bending incurred during the heat treatment phase.</li>
+            <li>The heat-induced deformity is compromising the integrity and /fitment consequently functionality of the ring.</li>
+            <li>The rings are used in engines with 85% Ethanol fuel called flex fuel in BS-VI engines of motor cycles and scooters.</li>
+            <li>The details of the manufacturing processes used are attached below.</li>
+            <li>Make Changes to the heat treatment parameters and refine the manufacturing process which ensure the integrity of the third piston ring rail.</li>
+            <li>All the required documents are attached below.</li> 
+        </ol>
+    </div>
+</div>
+<!--  -->
+<div id="container1More" style="display: none;">
+            <!--   -->
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">09</h1>
+        <div class="content">
+            <h4>Vehicle parking</h4>
+            <p>In the realm of valet parking services, the paramount concern for car owners is ensuring the security and integrity of their vehicles while entrusted to the care of valet attendants. The challenge is to devise a foolproof system that guarantees the safety of parked vehicles, assuring car owners that their vehicles will not be utilized for personal purposes or taken out without explicit permission.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container9More')">Read More</button>
+    
+    <div id="container9More" style="display: none;">
+        <h4><b>Key Objectives:</b></h4>
+        <ol type="I">
+            <li>Vehicle Usage Monitoring:</li>
+            <p>Develop a comprehensive system that monitors the usage of parked vehicles by valet attendants, ensuring they are only used for legitimate parking purposes.</p>
+            <li>Geo-Fencing Technology:</li>
+            <p>Implement geo-fencing technology to establish virtual boundaries around the parking area, ensuring that vehicles remain within designated zones.</p>
+            <li>Ignition Control Mechanism:</li>
+            <p>Integrate a secure mechanism that prevents the ignition of parked vehicles without proper authorization, safeguarding against unauthorized use.</p>
+            <li>Real-Time Surveillance:</li>
+            <p>Deploy surveillance systems to monitor valet parking areas in real-time, providing an additional layer of security and accountability.</p>
+            <li>Digital Check-In/Check-Out System:</li>
+            <p>Develop a digital check-in/check-out system that records the entry and exit times of each vehicle, enabling a transparent tracking process.</p>
+            <li>User Notification System:</li>
+            <p>Establish a notification system that informs car owners of any significant events related to their parked vehicles, such as movement, ignition attempts, or exit from the parking area.</p>
+        </ol>
+        <h4><b>Considerations:</b></h4>
+        <ul>
+            <li>User-Friendly Interfaces:</li>
+            <p>Design intuitive interfaces for both car owners and valet attendants to facilitate a seamless and user-friendly experience.</p>
+            <li>Legal and Ethical Compliance:</li>
+            <p>Ensure that the implemented system adheres to legal and ethical standards regarding privacy, data protection, and vehicle usage.</p>
+        </ul>
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">10</h1>
+        <div class="content">
+            <h4>Baggage Tracking especially in airports</h4>
+            <p>In the realm of airport travel, the predominant challenge faced by passengers is the cumbersome and often stressful process of handling luggage. The prevalent reliance on taxi services for airport transportation is primarily driven by the need to conveniently transport luggage from one's residence to the airport.</p>
+        </div>
+    </div>
+        <button class="read-more-btn" onclick="toggleVisibility('container10More')">Read More</button>
+        
+        <div id="container10More" style="display: none;">
+            <p>The objective is to develop an innovative application that automates the seamless "delivery" of passengers' luggage, eliminating the need for manual transportation.</p>
+            <h4><b>Key Objectives:</b></h4>
+            <ol type="I">
+                <li>Automated Luggage Pickup:</li>
+                <p>Design a system that enables passengers to schedule automated pickups of their luggage from their residences, minimizing the effort required for transportation to the airport.</p>
+                <li>Real-Time Tracking:</li>
+                <p>Implement robust real-time tracking mechanisms for luggage, allowing passengers to monitor the location and status of their belongings throughout the delivery process.</p>
+                <li>Secure and Efficient Transportation:</li>
+                <p>Devise a secure and efficient transportation network that ensures the safe and timely delivery of luggage from the pickup location to the designated airport terminal.</p>
+                <li>User-Friendly Mobile Application:</li>
+                <p>Develop an intuitive mobile application that facilitates easy scheduling, tracking, and management of luggage delivery, catering to a diverse range of users.</p>
+                <li>Automated Check-In Integration:</li>
+                <p>Integrate the luggage delivery system with airline check-in processes to provide a seamless experience for passengers, ensuring synchronization with flight schedules.</p>
+                <li>Customizable Delivery Options:</li>
+                <p>Provide passengers with customizable options for delivery, allowing them to choose specific time slots, delivery preferences, and destination details.</p>
+                <li>Cost-Efficient Solutions:</li>
+                <p>Explore cost-efficient logistics and transportation solutions to make automated luggage delivery an economically viable option for passengers.</p>
+            </ol>
+            <h4><b>Considerations:</b></h4>
+            <ul>
+                <li>Compliance and Regulations:</li>
+                <p>Ensure compliance with aviation and transportation regulations, including security standards, to guarantee a seamless integration with airport operations.</p>
+                <li>Scalability:</li>
+                <p>Design the system with scalability in mind, accommodating varying passenger loads and adapting to the evolving landscape of airport logistics.</p>
+            </ul>
+        </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">11</h1>
+        <div class="content">
+            <h4>Food Delivery</h4>
+            <P>In the context of food delivery and charitable initiatives, a pressing challenge emerges when individuals seek to efficiently and instantly deliver food to friends or donate excess food to charitable organizations. The goal is to develop an application that provides a seamless and easy-to-use solution for instant food delivery within a specified distance or for facilitating convenient donations to orphanages.</P>
+        </div>
+    </div>
+        <button class="read-more-btn" onclick="toggleVisibility('container11More')">Read More</button>
+        
+        <div id="container11More" style="display: none;">
+            <h4><b>Key Objectives:</b></h4>
+            <ol type="I">
+                <li>Instant Food Delivery:</li>
+                <p>Create a platform that enables users to effortlessly deliver prepared dishes to friends or family located within a certain distance, ensuring timely and warm delivery.</p>
+                <li>Donation Management:</li>
+                <p>Implement a streamlined process for users to donate surplus food to orphanages or charitable organizations, reducing food wastage and supporting those in need.</p>
+                <li>User-Friendly Interface:</li>
+                <p>Design an intuitive and user-friendly mobile application that caters to both senders and recipients, ensuring a smooth and pleasant experience for all users.</p>
+                <li>Geolocation Services:</li>
+                <p>Integrate robust geolocation services to accurately determine the distance between the sender and recipient, optimizing the delivery process for time-sensitive orders.</p>
+                <li>Food Safety Guidelines:</li>
+                <p>Provide guidelines and best practices for food packaging and transportation to maintain the safety and quality of the delivered food, adhering to health and hygiene standards.</p>
+                <li>Customizable Options:</li>
+                <p>Allow users to customize their delivery preferences, including special instructions and delivery time slots.</p>
+                <li>Real-Time Tracking:</li>
+                <p>Implement real-time tracking features for both senders and recipients, allowing them to monitor the status and location of the food delivery.</p>
+            </ol>
+        </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">12</h1>
+        <div class="content">
+            <p>The concluded outer bore diameter of the piston exhibits irregularities following the completion of the finishing processes. To illustrate, a bore diameter of 49.99 mm, post-processing, yields a diameter reduced by 20 microns.</p>
+        </div>
+    </div>
+        <button class="read-more-btn" onclick="toggleVisibility('container5More')">Read More</button>
+       
+            <div id="container5More" style="display: none;">
+                <p>In light of this issue, it is imperative to devise a solution that eradicates such inconsistencies in the bore diameter of the piston. The suggested resolution should address the root causes of this variation, aiming to establish a more precise and reliable manufacturing process. By identifying and rectifying the factors contributing to the dimensional fluctuations, the proposed solution intends to ensure uniformity and accuracy in the outer bore diameter, thus enhancing the overall quality and performance of the piston. This approach seeks to optimize the pre-finshing processes, finishing processes and implement measures that guarantee the desired bore diameter is consistently achieved, aligning with the quality standards set for the manufacturing of pistons.</p>
+            </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">13</h1>
+        <div class="content">
+            <h4>Training or creating an AI model</h4>
+            <p>Creating an AI model specifically tailored for educational purposes, termed "CollegeGPT," involves training the model with relevant textbooks and instructional materials to provide comprehensive and accurate information on academic subjects. Additionally, extending the capabilities of the model to offer assistance in real-world scenarios, such as interpreting car manuals and diagnosing issues, can enhance its practical utility.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container13More')">Read More</button>
+    
+    <div id="container13More" style="display: none;">
+        <ol>
+            <li>Machine-Specific Query Resolution:
+              <ul>
+                <li>Train MachineGPT with a diverse range of machine manuals and machinery knowledge to build a strong foundation in machine processings.</li>
+                <li>Enable MachineGPT to answer specific questions related to the content it has been trained on, assisting users with their queries and providing detailed explanations.</li>
+              </ul>
+            </li>
+            <li>Real-World Application:
+              <ul>
+                <li>Integrate practical application features, such as interpreting car manuals. Train the model to analyze images or descriptions of issues, enabling it to provide relevant information and potential solutions.</li>
+              </ul>
+            </li>
+            <li>Multi-Domain Proficiency:
+              <ul>
+                <li>Develop interactive learning features where users can engage in conversations with MachineGPT to enhance their understanding of complex topics through dynamic Q&A sessions.</li>
+                <li>Implement image recognition capabilities for MachineGPT to analyze images submitted by users, such as car dashboard warning lights, and provide clear explanations or suggestions for action.</li>
+              </ul>
+            </li>
+            <li>Considerations:
+              <ul>
+                <li>Data Privacy: Ensure robust data privacy measures, especially when dealing with user-submitted images or queries related to personal devices.</li>
+                <li>Accuracy and Reliability: Regularly evaluate and improve the accuracy of responses to real-world queries to maintain user trust.</li>
+              </ul>
+            </li>
+          </ol>
+          
+    </div>
+</div>
+<!--  -->
+
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">14</h1>
+        <div class="content">
+            <h4>Integrated Smart Factory System for Predictive Maintenance and Quality Control</h4>
+            <p>In the context of advancing manufacturing processes, there is a growing need for an integrated Smart Factory system that leverages cutting-edge technologies to enhance operational efficiency and product quality. The primary focus of this system is to address the challenges associated with predictive maintenance and quality control in a manufacturing environment.</p>
+        </div>
+    </div>
+            <button class="read-more-btn" onclick="toggleVisibility('container14More')">Read More</button>
+    
+            <div id="container14More" style="display: none;"> 
+                <p><b>Objective:</b>
+                    The objective of this project is to design and implement a comprehensive Smart Factory system that incorporates the following key features:
+                    </p>
+                    <ol type="I">
+                    <li>1.	Predictive Maintenance:</li>
+                        •	Develop algorithms to analyze the real-time status of factory assets.
+                        •	Implement predictive models to forecast service cycles and plan maintenance activities proactively.
+                        •	Minimize unplanned downtime by predicting potential equipment failures.
+                       <li> 2.	Noise Anomaly Detection:</li>
+                        •	Integrate sensors and analytical tools to detect abnormal noise patterns in the manufacturing environment.
+                        •	Develop algorithms to identify and categorize noise anomalies for further analysis.
+                        <li>3.	Virtual Assistant:</li>
+                        •	Implement a virtual assistant system capable of understanding and responding to various queries related to manufacturing processes, equipment status, and maintenance schedules.
+                        •	Utilize natural language processing and machine learning techniques to enhance the virtual assistant's capabilities over time.
+                       <li>4.	Cosmetic Defect Detection:</li>
+                        •	Implement computer vision algorithms to detect cosmetic defects in the manufacturing process.
+                        •	Integrate image recognition technologies to identify and classify cosmetic issues in real-time.
+                        <li>5.	Welding Defects:</li>
+                        •	Develop machine learning models to identify welding defects during the manufacturing process.
+                        •	Implement real-time monitoring of welding activities and trigger alerts for potential defects.
+                        <li>6.	Surface Quality Control:</li>
+                        •	Utilize advanced imaging and sensing technologies to assess and control the surface quality of manufactured products.
+                        •	Implement algorithms to identify and categorize surface defects, ensuring high-quality end products.
+                        
+                        </ol>
+                        <p><b>Expected Outcomes:</b><br>
+                            1.	Improved operational efficiency through predictive maintenance, reducing unplanned downtime.<br>
+                            2.	Enhanced product quality through real-time detection and correction of cosmetic and welding defects.<br>
+                            3.	Increased responsiveness to manufacturing queries through the implementation of a virtual assistant.<br>
+                            4.	Advanced monitoring and control of environmental factors, such as noise anomalies, contributing to a safer working environment.
+                            </p>
+            </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">15</h1>
+        <div class="content">
+            <h4>Advanced Safety Monitoring System for Construction Sites</h4>
+            <p>The construction industry faces significant challenges related to workplace safety, particularly in scenarios involving work at height, potential dropped objects, and poor housekeeping. To address these challenges and enhance safety protocols, there is a critical need for an integrated safety monitoring system tailored for construction sites. This system will incorporate advanced technologies to detect and prevent accidents associated with work at height, dropped objects, and poor housekeeping.</p>
+        </div>
+    </div>
+        <button class="read-more-btn" onclick="toggleVisibility('container15More')">Read More</button>
+
+        <div id="container15More" style="display: none;"> 
+            <p><b>Objective:</b><br>   
+                <p>The primary objective of this project is to develop and implement a comprehensive safety monitoring system for construction sites that addresses the following key requirements:</p>     
+                <ol type="I">
+                    <li>1.	Work at Height Detection:</li>
+                    •	Implement computer vision algorithms for person detection during work at height activities.
+•	Utilize normal estimation techniques to assess body posture and positioning.
+•	Integrate image recognition technologies to identify and ensure the proper usage of safety equipment such as harnesses, lanyards, fall arrestors, and anchorage points.
+<li>2.	Dropped Objects Detection:</li>
+•	Develop object detection and classification models to identify and categorize objects in the construction environment.
+•	Implement real-time monitoring to detect potential dropped objects and trigger alerts for immediate intervention.
+<li>3.	Poor Housekeeping Detection:</li>
+•	Integrate sensors and image processing techniques to identify wet, greasy, or oily areas on the construction site.
+•	Utilize person detection algorithms to identify individuals heading towards slippery zones.
+•	Implement real-time alerts and notifications for poor housekeeping conditions to prevent accidents related to falls and slips.
+</ol> 
+<p><b>Expected Outcomes:</b><br>
+    1.	Enhanced Work at Height Safety:<br>
+•	Improved monitoring and detection of workers engaged in activities at height.
+•	Real-time assessment of body posture and proper usage of safety equipment.
+2.	Dropped Objects Prevention:<br>
+•	Early detection and categorization of potential dropped objects.
+•	Immediate alerts to prevent accidents and injuries caused by falling objects.
+3.	Improved Housekeeping Standards:<br>
+•	Timely identification of poor housekeeping conditions.
+•	Proactive alerts and notifications to ensure a safe working environment, especially in areas prone to slips and falls.</p>
+</p>
+</div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">16</h1>
+        <div class="content">
+            <h4>Advanced Noise Anomaly Detection System for Manufacturing Equipment Health Monitoring</h4>
+            <p>In manufacturing environments, the health and operational status of equipment play a pivotal role in ensuring seamless production processes. One crucial aspect of equipment health is the characteristic noise patterns they produce during operation. A change or anomaly in the normal noise signature may indicate underlying issues such as loose parts, defective components, or other mechanical irregularities. To address this, there is a pressing need for an advanced noise anomaly detection system designed specifically for manufacturing equipment.</p>
+        </div>
+    </div>
+       <button class="read-more-btn" onclick="toggleVisibility('container16More')">Read More</button>
+       <div id="container16More" style="display: none;"> 
+            <p><b>Objective</b>
+                <p>The primary objective of this project is to develop and implement a robust noise anomaly detection system tailored for manufacturing environments, focusing on the early identification of equipment defects or malfunctions. Key components of the system include:</p>
+                <h4><b>Objectives:</b></h4>
+                <ol>
+                    <li>Noise Signature Analysis:
+                      <ul>
+                        <li>Conduct an in-depth analysis of the normal noise signatures produced by various manufacturing equipment.</li>
+                        <li>Establish a baseline for each equipment type to identify deviations indicative of potential defects.</li>
+                      </ul>
+                    </li>
+                    <li>Real-time Monitoring:
+                      <ul>
+                        <li>Implement real-time monitoring of equipment noise during operational phases.</li>
+                        <li>Utilize sensors and data acquisition systems to continuously capture and analyze noise patterns.</li>
+                      </ul>
+                    </li>
+                    <li>Anomaly Detection Algorithms:
+                      <ul>
+                        <li>Develop advanced machine learning algorithms to detect anomalies in equipment noise.</li>
+                        <li>Train the system to differentiate between normal operational sounds and irregularities that may signify defects.</li>
+                      </ul>
+                    </li>
+                    <li>Root Cause Identification:
+                      <ul>
+                        <li>Integrate diagnostic capabilities to identify potential root causes of detected anomalies.</li>
+                        <li>Provide alerts or notifications indicating the specific nature of the equipment issue for efficient troubleshooting.</li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <h4><b>Expected Outcomes:</b></h4>
+                  <ol>
+                    <li>Early Defect Identification:
+                      <ul>
+                        <li>Detect abnormalities in equipment noise patterns at an early stage, allowing for prompt intervention.</li>
+                        <li>Minimize the risk of equipment failure and unplanned downtime.</li>
+                      </ul>
+                    </li>
+                    <li>Improved Maintenance Planning:
+                      <ul>
+                        <li>Enable predictive maintenance by proactively identifying potential defects based on changes in noise signatures.</li>
+                        <li>Optimize maintenance schedules and resource allocation for enhanced operational efficiency.</li>
+                      </ul>
+                    </li>
+                    <li>Reduced Equipment Downtime:
+                      <ul>
+                        <li>Facilitate quick and targeted repairs by pinpointing the root cause of equipment anomalies.</li>
+                        <li>Minimize production disruptions and downtime associated with unexpected equipment failures.</li>
+                      </ul>
+                    </li>
+                  </ol>                  
+            </div>
+        </div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">17</h1>
+        <div class="content">
+            <h4>Customized Virtual Assistance System for Industry-Specific Knowledge Access</h4>
+            <p>In diverse industries such as manufacturing, there exists a recurrent need for on-demand access to specialized knowledge, particularly in areas like electrical wiring plans, plumbing layouts, and other domain-specific details. However, the challenge lies in providing accurate and tailored information that is specifically relevant to the unique needs of a particular company or community. To address this, there is a critical requirement for the development of a dedicated virtual assistance system that offers precise and industry-specific information, exclusively accessible to users within a defined community or organization.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container13More')">Read More</button>
+    
+    <div id="container13More" style="display: none;">
+        <h4><b>Objectives</b></h4>
+        <p>The primary objective of this project is to create a customized virtual assistance system designed to cater to the specific informational needs of distinct industries or communities. Key components of the system include:</p>
+        <ol type="I">
+            <li>Industry-Specific Knowledge Base:</li>
+            <p>Develop an extensive database of industry-specific information, encompassing topics such as electrical wiring plans, plumbing layouts, and other relevant domains.</p>
+            <li>Natural Language Processing (NLP) Capabilities:</li>
+            <p>Implement advanced NLP algorithms to understand and interpret user queries accurately</p>
+            <p>Enable the virtual assistant to comprehend industry-specific terminology and nuances for precise responses</p>
+            <li>Access Control and Customization:</li>
+            <p>Establish secure access controls to ensure that the virtual assistant is exclusively available to users within a defined industry or community.</p>
+            <p>Enable customization features to tailor responses based on the specific needs and requirements of the user's industry.</p>
+            <li>Continuous Learning and Updates:</li>
+            <p>Implement machine learning algorithms to enable continuous learning and adaptation of the virtual assistant's knowledge base</p>
+            <p>Regularly update the system with the latest industry standards, regulations, and best practices.</p>
+            
+        </ol>
+        <h4><b>Expected Outcomes:</b></h4>
+        <ul>
+            <li>Accurate and Relevant Information:</li>
+            <p>Provide users with precise and up-to-date information specific to their industry, such as electrical and plumbing plans.</p>
+            <p>Minimize the risk of misinformation and enhance the reliability of the virtual assistant.</p>
+            <li>Enhanced User Experience:</li>
+            <p>Create a user-friendly interface that facilitates seamless interaction with the virtual assistant</p>
+            <p>Improve user satisfaction by delivering prompt and relevant responses to inquiries.</p>
+            <li>Secure and Restricted Access:</li>
+            <p>Ensure the virtual assistant is accessible only to authorized users within the designated industry or community.</p>
+            <p>Implement robust security measures to protect sensitive information.</p>
+        </ul>
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">18</h1>
+        <div class="content">
+            <h4>Precision Cosmetic Defect Detection System for Automotive Manufacturing</h4>
+            <p>In the automotive manufacturing industry, ensuring the flawless appearance of the final product is paramount for customer satisfaction and brand reputation. However, the challenge lies in detecting and addressing minor cosmetic defects, such as dents, scratches, or incomplete paint applications, which can significantly impact the overall aesthetic quality of the vehicle. To address this, there is a critical need for the development of a precision cosmetic defect detection system designed specifically for automotive manufacturing, capable of identifying and categorizing even the most minor cosmetic imperfections across the entirety of the vehicle</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container17More')">Read More</button>
+    
+    <div id="container17More" style="display: none;">
+        <h4><b>Objectives</b></h4>
+        <p>The primary objective of this project is to design and implement an advanced cosmetic defect detection system that ensures the comprehensive inspection of automotive vehicles during the manufacturing process. Key components of the system include:s</p>
+        <ol>
+            <li>Automated Visual Inspection:
+              <ul>
+                <li>Implement computer vision algorithms to perform automated visual inspection of the entire vehicle surface.</li>
+                <li>Develop image recognition techniques to identify and categorize cosmetic defects, including dents, scratches, and paint imperfections.</li>
+              </ul>
+            </li>
+            <li>High-Resolution Imaging:
+              <ul>
+                <li>Utilize high-resolution imaging technologies to capture detailed images of the vehicle exterior.</li>
+                <li>Ensure the system is capable of detecting even the smallest cosmetic defects with precision.</li>
+              </ul>
+            </li>
+            <li>Defect Categorization and Severity Assessment:
+              <ul>
+                <li>Implement machine learning models to categorize cosmetic defects based on type and severity.</li>
+                <li>Assign a severity score to each detected defect to prioritize corrective actions.</li>
+              </ul>
+            </li>
+            <li>Real-time Detection and Notification:
+              <ul>
+                <li>Enable real-time monitoring of the manufacturing process for immediate detection of cosmetic defects.</li>
+                <li>Implement a notification system to alert operators or automated processes for timely corrective measures.</li>
+              </ul>
+            </li>
+          </ol>
+          <h4><b>Expected Outcomes:</b></h4>
+          <ol>
+            <li>Enhanced Aesthetic Quality:
+              <ul>
+                <li>Ensure the production of vehicles with a high standard of aesthetic quality by detecting and rectifying even minor cosmetic defects.</li>
+              </ul>
+            </li>
+            <li>Reduced Rework and Warranty Claims:
+              <ul>
+                <li>Minimize the need for post-production rework by addressing cosmetic defects during the manufacturing process.</li>
+                <li>Decrease the likelihood of warranty claims related to cosmetic imperfections.</li>
+              </ul>
+            </li>
+            <li>Optimized Production Efficiency:
+              <ul>
+                <li>Improve production efficiency by automating the cosmetic defect detection process, reducing manual inspection efforts.</li>
+                <li>Facilitate a streamlined manufacturing workflow with enhanced quality control measures.</li>
+              </ul>
+            </li>
+          </ol>
+          
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">19</h1>
+        <div class="content">
+            <h4>Comprehensive Work at Height Safety Monitoring System for Vertical Infrastructure Construction</h4>
+            <p>In the construction of multi-story buildings, where work at height involves substantial risk, ensuring the safety of workers becomes paramount. Particularly in instances where workers utilize ropes to ascend and perform tasks at considerable heights, it is crucial to implement a robust safety monitoring system. The challenge lies in precisely detecting and verifying the correct usage of safety equipment, such as safety anchors, while also monitoring the vertical distance a worker ascends or descends. To address this, there is a pressing need for the development of a comprehensive Work at Height Safety Monitoring System tailored for vertical infrastructure construction projects.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container19More')">Read More</button>
+    
+    <div id="container19More" style="display: none;">
+        <h4><b>Objectives</b></h4>
+        <p>The primary objective of this project is to design and implement an advanced safety monitoring system that ensures the well-being of workers engaged in work at height activities within tall structures. Key components of the system include:</p>        
+        <ol>
+            <li>Safety Equipment Verification:
+              <ul>
+                <li>Integrate computer vision algorithms to verify the correct usage and fitting of safety equipment, including safety anchors, harnesses, and other essential gear.</li>
+              </ul>
+            </li>
+            <li>Height Measurement and Monitoring:
+              <ul>
+                <li>Implement precise height measurement technologies to monitor the vertical distance a worker ascends or descends during work at height activities.</li>
+                <li>Provide real-time information on the worker's current height, ensuring adherence to safety regulations.</li>
+              </ul>
+            </li>
+            <li>Real-time Safety Alerts:
+              <ul>
+                <li>Develop an alert system that triggers notifications in real-time if safety equipment is improperly fitted or if the worker exceeds predefined height limits.</li>
+                <li>Integrate sensors to detect anomalies, such as sudden movements or irregular positioning, indicative of potential safety hazards.</li>
+              </ul>
+            </li>
+            <li>Data Logging and Reporting:
+              <ul>
+                <li>Establish a comprehensive data logging system to record workers' height-related activities over time.</li>
+                <li>Generate detailed reports for safety assessments, regulatory compliance, and post-incident analysis.</li>
+              </ul>
+            </li>
+          </ol>
+          <h4><b>Expected Outcomes:s</b></h4>
+          <ol>
+            <li>Enhanced Worker Safety:
+              <ul>
+                <li>Ensure the correct usage of safety equipment to mitigate the risk of accidents during work at height activities.</li>
+                <li>Provide real-time alerts for immediate intervention in case of safety equipment issues or height violations.</li>
+              </ul>
+            </li>
+            <li>Regulatory Compliance:
+              <ul>
+                <li>Facilitate compliance with safety regulations and standards governing work at height in vertical construction projects.</li>
+                <li>Generate reports for regulatory authorities, showcasing adherence to safety guidelines.</li>
+              </ul>
+            </li>
+            <li>Accurate Height Monitoring:
+              <ul>
+                <li>Provide accurate and real-time information on workers' vertical position, contributing to improved safety management and planning.</li>
+              </ul>
+            </li>
+          </ol>
+          
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">20</h1>
+        <div class="content">
+            <h4>Advanced Dropped Objects Detection System for Public Spaces and Hazardous Environments</h4>
+            <p>In public spaces like shopping malls and hazardous environments where tools and equipment are utilized, the inadvertent dropping of objects poses a potential threat to safety and security. Detecting and identifying dropped objects swiftly is crucial for ensuring public safety and preventing accidents. The challenge lies in developing an advanced system that can accurately identify and categorize dropped objects in real-time, whether in crowded public areas or high-risk work environments involving tools. To address this, there is a critical need for the development of an advanced Dropped Objects Detection System with applications in both public spaces and hazardous work environments.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container20More')">Read More</button>
+    
+    <div id="container20More" style="display: none;">
+        <h4><b>Objectives</b></h4>
+    <p>The primary objective of this project is to design and implement an intelligent system capable of detecting and identifying dropped objects in real-time across diverse environments. Key components of the system include:</p>        
+    
+    <ol>
+        <li>Automated Object Detection:
+          <ul>
+            <li>Implement computer vision algorithms for automated detection of dropped objects in real-time.</li>
+            <li>Utilize image recognition techniques to identify and categorize objects based on their characteristics.</li>
+          </ul>
+        </li>
+        <li>Dynamic Environment Adaptation:
+          <ul>
+            <li>Develop algorithms that can adapt to dynamic environments, such as crowded public spaces or hazardous work environments, ensuring accurate detection in varying conditions.</li>
+          </ul>
+        </li>
+        <li>Real-time Alerting System:
+          <ul>
+            <li>Integrate a real-time alerting system that triggers notifications when a dropped object is detected.</li>
+            <li>Ensure that alerts are communicated promptly to relevant authorities or personnel for swift action.</li>
+          </ul>
+        </li>
+        <li>Object Identification and Prioritization:
+          <ul>
+            <li>Implement machine learning models to identify and categorize dropped objects based on their nature and potential risk level.</li>
+            <li>Prioritize alerts based on the perceived severity of the dropped object, facilitating efficient response strategies.</li>
+          </ul>
+        </li>
+      </ol>
+      <h4><b>Expected Outcomes:</b></h4>
+      <ol>
+        <li>Enhanced Public Safety:
+          <ul>
+            <li>Swift identification and management of dropped objects in crowded public spaces, reducing the risk of accidents and ensuring public safety.</li>
+          </ul>
+        </li>
+        <li>Hazardous Work Environment Safety:
+          <ul>
+            <li>Prevention of accidents in hazardous work environments by quickly detecting and addressing dropped tools or equipment.</li>
+          </ul>
+        </li>
+        <li>Efficient Emergency Response:
+          <ul>
+            <li>Enable timely and effective responses by providing accurate information on the location, nature, and severity of dropped objects.</li>
+            <li>Facilitate coordination between security personnel, emergency services, or relevant authorities.</li>
+          </ul>
+        </li>
+        <li>Minimized Disruption:
+          <ul>
+            <li>Minimize disruptions caused by dropped objects by swiftly addressing and resolving incidents.</li>
+            <li>Improve overall safety protocols in both public and hazardous environments.</li>
+          </ul>
+        </li>
+      </ol>
+      </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">21</h1>
+        <div class="content">
+            <h4>Intelligent Alert System for Hazardous Environmental Conditions in Workspaces</h4>
+            <p>In workspaces where there are areas prone to slippery surfaces, oil spillages, or other hazardous conditions, ensuring the safety of individuals is paramount. The challenge lies in providing real-time alerts to individuals entering such areas, thereby preventing accidents and injuries caused by slips or falls. To address this, there is a crucial need for the development of an Intelligent Alert System designed to detect and promptly notify individuals when they are entering zones with poor housekeeping, such as slippery or oil-covered areas.</p>
+        </div>
+    </div>
+    <button class="read-more-btn" onclick="toggleVisibility('container21More')">Read More</button>
+    
+    <div id="container21More" style="display: none;">
+        <h4><b>Objectives</b></h4>
+        <p>The primary objective of this project is to design and implement an intelligent alert system that enhances workplace safety by providing timely warnings to individuals entering hazardous areas characterized by poor housekeeping. Key components of the system include:</p>
+        <ol>
+            <li>Sensing and Detection:
+              <ul>
+                <li>Integrate sensors to detect environmental conditions such as wet, greasy, or oily surfaces.</li>
+                <li>Develop algorithms to identify poor housekeeping conditions and define hazardous zones.</li>
+              </ul>
+            </li>
+            <li>Real-time Alerting:
+              <ul>
+                <li>Implement an alert system capable of providing real-time notifications to individuals entering areas with poor housekeeping conditions.</li>
+                <li>Utilize visual or auditory cues to effectively communicate the potential risk to the individual.</li>
+              </ul>
+            </li>
+            <li>User Localization and Tracking:
+              <ul>
+                <li>Integrate technologies for user localization and tracking within the workspace.</li>
+                <li>Ensure that alerts are personalized, directing warnings specifically to the individuals in proximity to the hazardous area.</li>
+              </ul>
+            </li>
+            <li>Integration with Access Control:
+              <ul>
+                <li>Develop mechanisms to integrate the alert system with access control measures.</li>
+                <li>Restrict access to hazardous areas unless individuals have acknowledged and understood the potential risks.</li>
+              </ul>
+            </li>
+          </ol>
+            <h4><b>Expected Outcomes:</b></h4>
+            <ol>
+                <li>Enhanced Workplace Safety:
+                  <ul>
+                    <li>Reduce the risk of slips, falls, and injuries by alerting individuals to hazardous areas with poor housekeeping conditions.</li>
+                  </ul>
+                </li>
+                <li>Immediate Hazard Awareness:
+                  <ul>
+                    <li>Facilitate immediate awareness of environmental hazards, ensuring that individuals can take necessary precautions.</li>
+                  </ul>
+                </li>
+                <li>Personalized Alerts:
+                  <ul>
+                    <li>Provide personalized alerts based on user localization, directing warnings specifically to individuals in proximity to the hazardous area.</li>
+                  </ul>
+                </li>
+                <li>Improved Housekeeping Practices:
+                  <ul>
+                    <li>Encourage better housekeeping practices by creating awareness and promoting a safer work environment.</li>
+                  </ul>
+                </li>
+              </ol>
+                          
+    </div>
+</div>
+<!--  -->
+<div class="container">
+    <div class="head-div" >
+        <h1 class="sno">22</h1>
+        <div class="content">
+            <h4>Design a PCB which replaces afin card in solar invertor</h4>
+        </div>
+    </div>
+</div>
+<!--  -->
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+        
+
+    </script>
+    
+
+
+        <div class="buttons">
+            <button class="btn" type="submit"><span></span><p data-start="good luck!" data-text="go!" data-title="Submit"></p></button>
+         </div>
+         
+    </body>
+</html>
